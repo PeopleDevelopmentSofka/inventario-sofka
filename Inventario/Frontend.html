@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<body>
+    <div class="form-container">
+        <h2>Registrar Movimiento de Inventario</h2>
+        <form id="movimientoForm">
+            <div>
+                <label for="producto">Producto:</label>
+                <select id="producto" name="producto" required>
+                    <optgroup label="Papelería">
+                        <option value="1">Cuaderno Sofka</option>
+                        <option value="2">Cuaderno Liderazgo</option>
+                        <option value="3">Cuaderno Valtica</option>
+                        <option value="4">Cuaderno Temporal de Sticker</option>
+                    </optgroup>
+                    <optgroup label="Morrales">
+                        <option value="5">Morral Negro Sofka</option>
+                        <option value="6">Morral Negro Valtica</option>
+                        <option value="7">Morral Colores Sofka</option>
+                    </optgroup>
+                    <optgroup label="Escritura">
+                        <option value="8">Esfero Hibot</option>
+                        <option value="9">Esfero Naranja Sofka Kit</option>
+                        <option value="10">Esfero Gris Sofka Kit</option>
+                        <option value="11">Esfero Sofka VIP</option>
+                        <option value="12">Esfero Pertrinum</option>
+                    </optgroup>
+                    <optgroup label="Contenedores">
+                        <option value="13">Termo Térmico</option>
+                        <option value="14">Vaso Cafe Sofka</option>
+                        <option value="15">Lonchera Negra</option>
+                        <option value="16">Lonchera Cafe</option>
+                        <option value="17">Lonchera Colores</option>
+                        <option value="18">Mug Sofka</option>
+                        <option value="19">Mug Liderazgo</option>
+                        <option value="20">Mug Sofka Navideño</option>
+                    </optgroup>
+                    <optgroup label="Accesorios">
+                        <option value="21">Gorra Negra Sofka</option>
+                        <option value="22">Gorra Pertrinum</option>
+                        <option value="23">Canguro - Riñonera</option>
+                    </optgroup>
+                    <optgroup label="Tecnología">
+                        <option value="24">USB</option>
+                    </optgroup>
+                    <optgroup label="Protección">
+                        <option value="25">Tapabocas</option>
+                    </optgroup>
+                    <optgroup label="Camisetas Blancas - Hombre">
+                        <option value="26">Camiseta Sofkiana Blanca Hombre S</option>
+                        <option value="27">Camiseta Sofkiana Blanca Hombre M</option>
+                        <option value="28">Camiseta Sofkiana Blanca Hombre L</option>
+                        <option value="29">Camiseta Sofkiana Blanca Hombre XL</option>
+                        <option value="30">Camiseta Sofkiana Blanca Hombre XXL</option>
+                    </optgroup>
+                    <optgroup label="Camisetas Blancas - Mujer">
+                        <option value="31">Camiseta Sofkiana Blanca Mujer S</option>
+                        <option value="32">Camiseta Sofkiana Blanca Mujer M</option>
+                        <option value="33">Camiseta Sofkiana Blanca Mujer L</option>
+                        <option value="34">Camiseta Sofkiana Blanca Mujer XL</option>
+                        <option value="35">Camiseta Sofkiana Blanca Mujer XXL</option>
+                    </optgroup>
+                    <optgroup label="Camisetas Naranja">
+                        <option value="36">Camiseta Sofkiana Naranja Hombre S</option>
+                        <!-- ... resto de tallas naranja ... -->
+                    </optgroup>
+                    <optgroup label="Camisetas Negras">
+                        <option value="46">Camiseta Sofkiana Negra Hombre S</option>
+                        <!-- ... resto de tallas negras ... -->
+                    </optgroup>
+                    <optgroup label="Camisetas Especiales">
+                        <option value="66">Camiseta Eventos Todas las tallas</option>
+                        <option value="67">Camiseta Valtica Todas las tallas</option>
+                        <option value="68">Camiseta 8 Años Todas las tallas</option>
+                        <option value="69">Camiseta Hibot Verde Todas las tallas</option>
+                        <option value="70">Camiseta 10 Años Todas las tallas</option>
+                        <option value="71">Camiseta Gris Sofka U Todas las tallas</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="ubicacion">Ubicación:</label>
+                <select id="ubicacion" name="ubicacion" required>
+                    <option value="medellin">Medellín</option>
+                    <option value="bogota">Bogotá</option>
+                </select>
+            </div>
+            <div>
+                <label for="tipo">Tipo de Movimiento:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="entrada">Entrada</option>
+                    <option value="salida">Salida</option>
+                </select>
+            </div>
+            <div>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" required min="1">
+            </div>
+            <div>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="2"></textarea>
+            </div>
+            <button type="submit">Registrar Movimiento</button>
+        </form>
+    </div>
+
+    <style>
+        /* Agregar estos estilos */
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        optgroup {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        // Aquí irá el código JavaScript para interactuar con el backend
+        document.getElementById('productoForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                cantidad: parseInt(document.getElementById('cantidad').value),
+                fecha: document.getElementById('fecha').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/productos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    alert('Producto agregado exitosamente');
+                    cargarProductos();
+                    e.target.reset();
+                } else {
+                    alert('Error al agregar el producto');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al conectar con el servidor');
+            }
+        });
+
+        async function cargarProductos() {
+            try {
+                const response = await fetch('http://localhost:5000/productos');
+                const productos = await response.json();
+                
+                const tabla = document.getElementById('productosTabla');
+                tabla.innerHTML = '';
+                
+                productos.forEach(producto => {
+                    const fila = `
+                        <tr>
+                            <td>${producto.id}</td>
+                            <td>${producto.nombre}</td>
+                            <td>${producto.cantidad}</td>
+                            <td>${producto.fecha}</td>
+                            <td>
+                                <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+                            </td>
+                        </tr>
+                    `;
+                    tabla.innerHTML += fila;
+                });
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function eliminarProducto(id) {
+            if (confirm('¿Está seguro de eliminar este producto?')) {
+                try {
+                    const response = await fetch(`http://localhost:5000/productos/${id}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    if (response.ok) {
+                        alert('Producto eliminado exitosamente');
+                        cargarProductos();
+                    } else {
+                        alert('Error al eliminar el producto');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error al conectar con el servidor');
+                }
+            }
+        }
+
+        // Cargar productos al iniciar la página
+        cargarProductos();
+
+        document.getElementById('movimientoForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                producto_id: parseInt(document.getElementById('producto').value),
+                tipo: document.getElementById('tipo').value,
+                ubicacion: document.getElementById('ubicacion').value,
+                cantidad: parseInt(document.getElementById('cantidad').value),
+                descripcion: document.getElementById('descripcion').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/movimientos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    alert('Movimiento registrado exitosamente');
+                    e.target.reset();
+                } else {
+                    const error = await response.json();
+                    alert(error.message || 'Error al registrar el movimiento');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al conectar con el servidor');
+            }
+        });
+    </script>
+</body>
+</html>
