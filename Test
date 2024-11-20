@@ -1,0 +1,35 @@
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+
+app = Flask(__name__)
+app.secret_key = "supersecretkey"  # Clave para mensajes flash
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        if request.is_json:
+            # Handle AJAX request
+            data = request.get_json()
+            email = data.get("email")
+            if email:
+                # Aquí podrías guardar el email en una base de datos o enviar un correo de bienvenida
+                return jsonify({
+                    "status": "success",
+                    "message": "¡Gracias por suscribirte!"
+                })
+            else:
+                return jsonify({
+                    "status": "error",
+                    "message": "Por favor, ingresa un correo válido."
+                }), 400
+        else:
+            # Handle regular form submission
+            email = request.form.get("email")
+            if email:
+                flash("¡Gracias por suscribirte!", "success")
+                return redirect(url_for("index"))
+            else:
+                flash("Por favor, ingresa un correo válido.", "error")
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
